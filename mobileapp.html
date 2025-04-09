@@ -167,9 +167,9 @@
 
 <div id="sideMenu" class="side-menu">
     <span class="close-btn" onclick="closeMenu()">&times;</span>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-    <a href="#lessons">Lessons</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="lesson.html">Lessons</a>
 </div>
 
 <div class="search-container">
@@ -219,35 +219,34 @@
 </footer>
 
 <script>
-    function openMenu() {
-        document.getElementById("sideMenu").style.width = "250px";
+   function openMenu() {
+      document.getElementById("sideMenu").style.width = "250px";
     }
     function closeMenu() {
-        document.getElementById("sideMenu").style.width = "0";
+      document.getElementById("sideMenu").style.width = "0";
     }
+
     function searchLessons() {
-        const input = document.getElementById('searchBar').value.toLowerCase();
-        const lessons = document.querySelectorAll('.pdf-list li');
-        const pdfList = document.querySelector('.pdf-list ul');
+      const input = document.getElementById('searchBar').value.toLowerCase();
+      const lessons = document.querySelectorAll('.pdf-list li');
+      const listContainer = document.getElementById('lessonList');
+      let found = false;
 
-        let found = false;
+      lessons.forEach(lesson => {
+        if (lesson.innerText.toLowerCase().includes(input)) {
+          lesson.style.display = 'block';
+          found = true;
+        } else {
+          lesson.style.display = 'none';
+        }
+      });
 
-        lessons.forEach(lesson => {
-            if (lesson.innerText.toLowerCase().includes(input)) {
-                lesson.style.display = 'block';
-                found = true;
-            } else {
-                lesson.style.display = 'none';
-            }
-        });
-
-        // Hide the entire list if no search input or no matches
-        pdfList.style.display = (input === '' || !found) ? 'none' : 'block';
+      listContainer.style.display = (input === '' || found) ? 'block' : 'none';
     }
-    function viewPdf(pdfUrl) {
-        document.getElementById('pdfViewer').src = pdfUrl;
+
+    function viewPdf(pdfUrl, description) {
+      document.getElementById('pdfViewer').src = pdfUrl;
       document.getElementById('pdfDescription').innerHTML = `<p><strong>Description:</strong> ${description}</p>`;
-    }
     }
 </script>
 
