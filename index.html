@@ -1,110 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LearnMate</title>
-    <style>
-       body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: url('backg.avif') no-repeat center center fixed;
-            background-size: cover;
-        }
-        header {
-            background-color: rgba(51, 51, 51, 0.8);
-            color: white;
-            display: flex;
-            align-items: center;
-            padding: 15px;
-        }
-        .logo {
-            width: 50px;
-            height: 50px;
-            margin-right: 15px;
-        }
-        .content {
-            text-align: center;
-            padding: 50px;
-            color: white;
-        }
-        .content h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-        .content p {
-            font-size: 20px;
-            margin-bottom: 30px;
-        }
-        .icons-container {
-            display: flex;
-            justify-content: center;
-            gap: 50px;
-            margin: 20px 0;
-        }
-        .icon {
-            text-align: center;
-            color: white;
-        }
-        .icon img {
-            width: 80px;
-            height: 80px;
-        }
-        .get-started {
-            padding: 15px 30px;
-            font-size: 20px;
-            background-color: #f04e30;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        .get-started:hover {
-            background-color: #c03e28;
-        }
-        footer {
-            text-align: center;
-            margin-top: 50px;
-            background-color: rgba(51, 51, 51, 0.8);
-            color: white;
-            padding: 10px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LearnMate</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url('backg.avif') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    header {
+      background-color: rgba(51, 51, 51, 0.85);
+      color: white;
+      display: flex;
+      align-items: center;
+      padding: 10px 15px;
+    }
+
+    .logo {
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+      margin: 0;
+    }
+
+    .content {
+      text-align: center;
+      padding: 30px 15px;
+      color: white;
+    }
+
+    .content h1 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    .content p {
+      font-size: 1rem;
+      margin-bottom: 25px;
+    }
+
+    .icons-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin: 20px 0;
+    }
+
+    .icon {
+      text-align: center;
+      color: white;
+      width: 100px;
+    }
+
+    .icon img {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 10px;
+    }
+
+    .icon p {
+      font-size: 0.9rem;
+    }
+
+    .get-started {
+      padding: 12px 25px;
+      font-size: 1rem;
+      background-color: #f04e30;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .get-started:hover {
+      background-color: #c03e28;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      background-color: rgba(51, 51, 51, 0.85);
+      color: white;
+      padding: 10px;
+      font-size: 0.9rem;
+    }
+
+    @media (min-width: 768px) {
+      .content h1 {
+        font-size: 3rem;
+      }
+
+      .content p {
+        font-size: 1.2rem;
+      }
+
+      .icon img {
+        width: 80px;
+        height: 80px;
+      }
+
+      .icon p {
+        font-size: 1rem;
+      }
+
+      .get-started {
+        font-size: 1.2rem;
+        padding: 15px 35px;
+      }
+
+      header h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<header>
-    <img src="logo1.png" alt="LearnMate Logo" class="logo">
+  <header>
+    <img src="logo1.png" alt="LearnMate Logo" class="logo" />
     <h1>LearnMate</h1>
-</header>
+  </header>
 
-<div class="content">
+  <div class="content">
     <h1>Welcome to LearnMate</h1>
     <p>Your go-to platform for interactive learning. Browse lessons, explore PDFs, and enhance your knowledge.</p>
-    
-    <div class="icons-container">
-        <div class="icon">
-            <img src="icon3.png" alt="Easy Learning">
-            <p>Easy Learning</p>
-        </div>
-        <div class="icon">
-            <img src="icon2.png" alt="Expert Lessons">
-            <p>Expert Lessons</p>
-        </div>
-        <div class="icon">
-            <img src="icon1.png" alt="Interactive Content">
-            <p>Interactive Content</p>
-        </div>
-    </div>
-    
-    <button class="get-started" onclick="window.location.href='mobileapp.html'">Get Started</button>
-</div>
 
-<footer>
+    <div class="icons-container">
+      <div class="icon">
+        <img src="icon3.png" alt="Easy Learning" />
+        <p>Easy Learning</p>
+      </div>
+      <div class="icon">
+        <img src="icon2.png" alt="Expert Lessons" />
+        <p>Expert Lessons</p>
+      </div>
+      <div class="icon">
+        <img src="icon1.png" alt="Interactive Content" />
+        <p>Interactive Content</p>
+      </div>
+    </div>
+
+    <button class="get-started" onclick="window.location.href='mobileapp.html'">Get Started</button>
+  </div>
+
+  <footer>
     <p>LearnMate - Empowering Education</p>
-</footer>
+  </footer>
 
 </body>
 </html>
