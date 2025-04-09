@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LearnMate - Your Learning Companion</title>
     <style>
+        {
+      box-sizing: border-box;
+    }
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -89,6 +92,14 @@
             width: 100%;
             height: 60vh;
         }
+        .pdf-description {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #fff3e0;
+      border: 1px solid #ff5722;
+      border-radius: 8px;
+      color: #333;
+    }
         footer {
             text-align: center;
             background-color: rgba(51, 51, 51, 0.9);
@@ -124,6 +135,26 @@
             cursor: pointer;
             color: white;
         }
+         @media (min-width: 768px) {
+      header {
+        flex-wrap: nowrap;
+      }
+
+      .motto {
+        width: auto;
+        margin-top: 0;
+      }
+
+      .search-container {
+        flex-direction: row;
+        justify-content: center;
+      }
+
+      .search-bar {
+        margin-bottom: 0;
+        margin-right: 10px;
+      }
+    }
     </style>
 </head>
 <body>
@@ -215,6 +246,8 @@
     }
     function viewPdf(pdfUrl) {
         document.getElementById('pdfViewer').src = pdfUrl;
+      document.getElementById('pdfDescription').innerHTML = `<p><strong>Description:</strong> ${description}</p>`;
+    }
     }
 </script>
 
