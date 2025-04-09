@@ -5,137 +5,168 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LearnMate - Your Learning Companion</title>
     <style>
-        {
+      *, *::before, *::after {
       box-sizing: border-box;
     }
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: url('backg.avif') no-repeat center center fixed;
-            background-size: cover;
-            color: #333;
-        }
-        header {
-            background-color: rgba(51, 51, 51, 0.9); 
-            color: white;
-            display: flex;
-            align-items: center;
-            padding: 15px;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-        .menu-btn {
-            font-size: 18px;
-            cursor: pointer;
-            padding: 12px;
-            background: #ff5722;
-            color: white;
-            border: none;
-            border-radius: 5px;
-        }
-        .search-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 10px;
-        }
-        .search-bar {
-            width: 90%;
-            max-width: 400px;
-            padding: 12px;
-            font-size: 16px;
-            border: 2px solid #ccc;
-            border-radius: 4px;
-        }
-        .search-button {
-            padding: 12px 15px;
-            font-size: 16px;
-            cursor: pointer;
-            background-color: #ff5722;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            margin-top: 10px;
-            width: 100%;
-            max-width: 200px;
-        }
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 20px;
-            padding: 10px;
-        }
-        .pdf-list, .pdf-viewer {
-            width: 95%;
-            max-width: 600px;
-            padding: 15px;
-            border: 1px solid #ccc;
-            background-color: rgba(255, 255, 255, 0.9);
-            border-radius: 8px;
-            text-align: center;
-        }
-        .pdf-list ul {
-            padding: 0;
-            list-style: none;
-        }
-        .pdf-list li {
-            display: block;
-            padding: 12px;
-            margin-bottom: 8px;
-            background-color: #ffcc80;
-            cursor: pointer;
-            border-radius: 4px;
-        }
-        .pdf-viewer iframe {
-            width: 100%;
-            height: 60vh;
-        }
-        .pdf-description {
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url('backg.avif') no-repeat center center fixed;
+      background-size: cover;
+      color: #333;
+    }
+
+    header {
+      background-color: rgba(51, 51, 51, 0.9); 
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px;
+      flex-wrap: wrap;
+    }
+
+    .menu-btn {
+      font-size: 16px;
+      cursor: pointer;
+      padding: 10px 15px;
+      background: #ff5722;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .motto {
+      width: 100%;
+      text-align: center;
+      margin-top: 5px;
+      font-style: italic;
+      font-size: 0.9rem;
+    }
+
+    .search-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
+    }
+
+    .search-bar {
+      width: 90%;
+      max-width: 400px;
+      padding: 10px;
+      font-size: 16px;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .search-button {
+      padding: 10px 15px;
+      font-size: 16px;
+      margin-top: 10px;
+      background-color: #ff5722;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      width: 100%;
+      max-width: 200px;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       margin-top: 20px;
+      padding: 10px;
+    }
+
+    .pdf-list, .pdf-viewer {
+      width: 95%;
+      max-width: 600px;
+      padding: 15px;
+      background-color: rgba(255, 255, 255, 0.9);
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .pdf-list ul {
+      padding: 0;
+      list-style: none;
+    }
+
+    .pdf-list li {
+      padding: 12px;
+      margin-bottom: 8px;
+      background-color: #ffcc80;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .pdf-list li:hover {
+      background-color: #ffb74d;
+    }
+
+    .pdf-viewer iframe {
+      width: 100%;
+      height: 65vh;
+      border: none;
+    }
+
+    .pdf-description {
+      margin-top: 15px;
       padding: 10px;
       background-color: #fff3e0;
       border: 1px solid #ff5722;
       border-radius: 8px;
       color: #333;
     }
-        footer {
-            text-align: center;
-            background-color: rgba(51, 51, 51, 0.9);
-            color: white;
-            padding: 15px;
-        }
-        .side-menu {
-            width: 0;
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
-            overflow-x: hidden;
-            transition: 0.5s;
-            padding-top: 60px;
-        }
-        .side-menu a {
-            padding: 15px;
-            text-decoration: none;
-            font-size: 20px;
-            color: white;
-            display: block;
-        }
-        .side-menu a:hover {
-            background-color: #ff5722;
-        }
-        .close-btn {
-            position: absolute;
-            top: 10px;
-            right: 20px;
-            font-size: 30px;
-            cursor: pointer;
-            color: white;
-        }
-         @media (min-width: 768px) {
+
+    footer {
+      text-align: center;
+      background-color: rgba(51, 51, 51, 0.9);
+      color: white;
+      padding: 15px;
+      font-size: 0.9rem;
+    }
+
+    .side-menu {
+      width: 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.95);
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+      z-index: 1000;
+    }
+
+    .side-menu a {
+      padding: 15px;
+      text-decoration: none;
+      font-size: 20px;
+      color: white;
+      display: block;
+    }
+
+    .side-menu a:hover {
+      background-color: #ff5722;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 30px;
+      cursor: pointer;
+      color: white;
+    }
+
+    @media (min-width: 768px) {
       header {
         flex-wrap: nowrap;
       }
@@ -153,6 +184,10 @@
       .search-bar {
         margin-bottom: 0;
         margin-right: 10px;
+      }
+
+      .search-button {
+        margin-top: 0;
       }
     }
     </style>
